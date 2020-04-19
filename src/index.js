@@ -19,6 +19,7 @@ class Container extends  React.Component {
         <button onClick = {e => {
           // ReducerにActionをdispatchする
           this.props.dispatch({type: "INCREMENT"});
+          console.log(this.props);
           console.log('INCREMENT');
         }}>
           加算ボタン
@@ -42,6 +43,7 @@ const reducer = (state = {value: 0}, action) => {
     switch(action.type) {
       case "INCREMENT":
         // valueを加算
+        console.log(`加算前のvalue:${state.value}`);
         return Object.assign({}, {value: state.value + 1});
       default:
         return state;
