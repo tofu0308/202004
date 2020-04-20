@@ -3,6 +3,26 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
+
+// component
+class Todo extends React.Component {
+  render() {
+    return <h1>Hello, World</h1>;
+  }
+}
+
+// actions
+let nextTodoId = 0;
+export const addTodo = (text) => {
+  return{
+    type: 'ADD_TODO',
+    id: nextTodoId ++,
+    text
+  }
+}
+
+
+
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, World</h1>;
@@ -75,6 +95,7 @@ const store = createStore(reducer);
 render (
   <Provider store={ store }>
       <App />
+      <Todo />
   </Provider>,
   document.getElementById("root")
 );
