@@ -21,21 +21,6 @@ export const addTodo = (text) => {
   }
 }
 
-// reducer
-const todo = (state, action) => {
-  switch(action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text
-      }
-      default: return state
-  }
-}
-export default todo
-
-
-
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, World</h1>;
@@ -93,13 +78,23 @@ const reducer = (state = {value: 0}, action) => {
           console.log(`減算前のvalue:${state.value}`);
           return Object.assign({}, {value: state.value - 1});
 
-        default:
-        return state;
+          // TODO追加
+          case 'ADD_TODO':
+            return {
+              id: action.id,
+              text: action.text
+            }
+
+        default: return state;
     }
 }
 
 // Reducerの戻り値を新しい状態（State）としてStoreで管理する
 const store = createStore(reducer);
+
+
+store.dispatch(addTodo('store!'))
+console.log(store.getState());
 
 // Root Render
 // ReduxのProviderコンポーネントで、Appコンポーネント
