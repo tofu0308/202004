@@ -5,11 +5,14 @@ import { Provider, connect } from "react-redux";
 
 import { addTodo } from './actions/todo'
 import todo from './reducers'
-import Todo from './components/Todo'
+import Todo from './components/App'
 
 
 let todoStore = createStore(todo);
 todoStore.dispatch(addTodo('Hello World!'));
+todoStore.dispatch(addTodo('Hello React!'))
+todoStore.dispatch(addTodo('Hello Redux!'))
+
 console.log(todoStore.getState());
 
 
@@ -87,7 +90,7 @@ render (
 );
 
 render (
-  <Provider store={ store }>
+  <Provider store={ todoStore }>
       <Todo />
   </Provider>,
   document.getElementById("todo")
