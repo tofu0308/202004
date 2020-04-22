@@ -3,11 +3,14 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
+import { addTodo } from './actions/todo'
+import todo from './reducers'
 import Todo from './components/Todo'
 
 
-
-
+let todoStore = createStore(todo);
+todoStore.dispatch(addTodo('Hello World!'));
+console.log(todoStore.getState());
 
 
 class Welcome extends React.Component {
