@@ -3,13 +3,18 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
+import Todo from './components/Todo'
+
+
+
+
+
+
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, World</h1>;
   }
 }
-
-
 class Container extends  React.Component {
   render() {
     return (
@@ -76,4 +81,11 @@ render (
       <App />
   </Provider>,
   document.getElementById("root")
+);
+
+render (
+  <Provider store={ store }>
+      <Todo />
+  </Provider>,
+  document.getElementById("todo")
 );
