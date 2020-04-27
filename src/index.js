@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
-import { addTodo } from './actions/todo'
+import { addTodo, toggleTodo } from './actions/todo'
 import todo from './reducers'
 import Todo from './components/App'
 
@@ -12,6 +12,8 @@ let todoStore = createStore(todo);
 todoStore.dispatch(addTodo('Hello World!'));
 todoStore.dispatch(addTodo('Hello React!'))
 todoStore.dispatch(addTodo('Hello Redux!'))
+todoStore.dispatch(toggleTodo(0));
+
 
 console.log(todoStore.getState());
 
