@@ -11,7 +11,8 @@ let AddTodo = ({dispatch}) => {
         input = node;
       }} />
       <button onClick = {()=>{
-        dispatch(addTodo(input.value));
+        if(input.value.length) dispatch(addTodo(input.value));
+        
         input.value = '';
       }}>
         add todo
