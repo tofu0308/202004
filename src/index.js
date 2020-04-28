@@ -3,18 +3,29 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
-import { addTodo, toggleTodo } from './actions/todo'
+import { addTodo, toggleTodo, setVisibilityFilter } from './actions/todo'
+
 import todo from './reducers'
 import Todo from './components/App'
 
 
 let todoStore = createStore(todo);
-todoStore.dispatch(addTodo('Hello World!'));
+
+// 初期値のconsole
+console.log(todoStore.getState());
+
+// todosを直接追加するテスト
+todoStore.dispatch(addTodo('Hello World!'))
 todoStore.dispatch(addTodo('Hello React!'))
 todoStore.dispatch(addTodo('Hello Redux!'))
+
+// completedを直接変更するテスト
 todoStore.dispatch(toggleTodo(0));
 
+// filterを直接変更するテスト
+todoStore.dispatch(setVisibilityFilter('SHOW_COMPLETED'))
 
+// 直接変更した結果
 console.log(todoStore.getState());
 
 
