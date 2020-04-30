@@ -23,7 +23,8 @@ todoStore.dispatch(addTodo('Hello Redux!'))
 todoStore.dispatch(toggleTodo(0));
 
 // filterを直接変更するテスト
-todoStore.dispatch(setVisibilityFilter('SHOW_COMPLETED'))
+todoStore.dispatch(setVisibilityFilter('SHOW_ACTIVE'))
+
 
 // 直接変更した結果
 console.log(todoStore.getState());
