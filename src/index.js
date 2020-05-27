@@ -11,22 +11,7 @@ import Todo from './components/App'
 
 let todoStore = createStore(todo);
 
-// 初期値のconsole
-console.log(todoStore.getState());
-
-// todosを直接追加するテスト
-todoStore.dispatch(addTodo('Hello World!'))
-todoStore.dispatch(addTodo('Hello React!'))
-todoStore.dispatch(addTodo('Hello Redux!'))
-
-// completedを直接変更するテスト
-todoStore.dispatch(toggleTodo(0));
-
-// filterを直接変更するテスト
-// todoStore.dispatch(setVisibilityFilter('SHOW_ACTIVE'))
-
-
-// 直接変更した結果
+// 初期値
 console.log(todoStore.getState());
 
 
