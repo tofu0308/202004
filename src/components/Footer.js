@@ -4,8 +4,12 @@ import Link from './Link';
 
 const Footer = () => (
   <p>
+    SHOW:
+    {" "}
     <Link>All</Link>
+    {", "}
     <Link>Active</Link>
+    {", "}
     <Link>Completed</Link>
   </p>
 );
