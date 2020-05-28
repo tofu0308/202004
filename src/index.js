@@ -3,16 +3,13 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider, connect } from "react-redux";
 
-import { addTodo, toggleTodo, setVisibilityFilter } from './actions/todo'
-
 import todo from './reducers'
 import Todo from './components/App'
 
 
 let todoStore = createStore(todo);
 
-// 初期値
-console.log(todoStore.getState());
+
 
 
 class Welcome extends React.Component {
