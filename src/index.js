@@ -6,12 +6,6 @@ import { Provider, connect } from "react-redux";
 import todo from './reducers'
 import Todo from './components/App'
 
-
-let todoStore = createStore(todo);
-
-
-
-
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, World</h1>;
@@ -41,7 +35,7 @@ class Container extends  React.Component {
           減算ボタン
         </button>
 
-      <p>{this.props.value}</p>
+      <p>{this.props.counter.value}</p>
       </div>
     )
   }
@@ -52,26 +46,9 @@ const App = connect(
   state => state
 )(Container);
 
-// Reducer
-const reducer = (state = {value: 0}, action) => {
-    // Componentの中でdispatchされたActionがaction変数に入ってくる
-    // action = { type: "INCREMENT" }
-    switch(action.type) {
-      case "INCREMENT":
-        // valueを加算
-        console.log(`加算前のvalue:${state.value}`);
-        return Object.assign({}, {value: state.value + 1});
-
-        case "DECRIMENT":
-          // valueを減算
-          console.log(`減算前のvalue:${state.value}`);
-          return Object.assign({}, {value: state.value - 1});
-        default: return state;
-    }
-}
 
 // Reducerの戻り値を新しい状態（State）としてStoreで管理する
-const store = createStore(reducer);
+const store = createStore(todo);
 
 
 // Root Render
@@ -81,13 +58,7 @@ const store = createStore(reducer);
 render (
   <Provider store={ store }>
       <App />
-  </Provider>,
-  document.getElementById("root")
-);
-
-render (
-  <Provider store={ todoStore }>
       <Todo />
   </Provider>,
-  document.getElementById("todo")
+  document.getElementById("root")
 );
