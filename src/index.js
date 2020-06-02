@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider, connect } from "react-redux";
 
 import todo from './reducers'
@@ -48,7 +48,10 @@ const App = connect(
 
 
 // Reducerの戻り値を新しい状態（State）としてStoreで管理する
-const store = createStore(todo);
+const store = createStore(
+  todo,
+  compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
+  );
 
 
 // Root Render
