@@ -6,6 +6,9 @@ import { Provider, connect } from "react-redux";
 import todo from './reducers'
 import Todo from './components/App'
 
+import CalculatorContainer from './containers/CalculatorContainer'
+
+// 初期にベタが期してたcomponent
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, World</h1>;
@@ -62,6 +65,7 @@ render (
   <Provider store={ store }>
       <App />
       <Todo />
+      <CalculatorContainer />
   </Provider>,
   document.getElementById("root")
 );

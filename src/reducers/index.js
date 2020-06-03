@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
 
-// Reducer
+// CounterのReducer
 const counter = (state = {value: 0}, action) => {
   // Componentの中でdispatchされたActionがaction変数に入ってくる
   // action = { type: "INCREMENT" }
