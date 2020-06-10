@@ -1,4 +1,5 @@
 // actionTypes
+//　この数なら直接でも・・・
 const INPUT_NUMBER = 'INPUT_NUMBER';
 const PLUS = 'PLUS';
 
