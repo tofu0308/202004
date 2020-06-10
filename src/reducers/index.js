@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
+import calculator from './calculator';
+
 
 // CounterのReducer
 const counter = (state = {value: 0}, action) => {
@@ -24,6 +26,7 @@ const counter = (state = {value: 0}, action) => {
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
-  counter
+  counter,
+  calculator
 });
 export default todoApp
