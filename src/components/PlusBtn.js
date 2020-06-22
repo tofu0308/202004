@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PlusBtn = ({n}) => (
-<button>+</button>
+const PlusBtn = ({onClick}) => (
+<button onClick={onClick}>+</button>
 )
 export default PlusBtn;
