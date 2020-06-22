@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider, connect } from "react-redux";
 
-import todo from './reducers'
+import reducers from './reducers'
 import Todo from './components/App'
 
 import CalculatorContainer from './containers/CalculatorContainer'
@@ -52,7 +52,7 @@ const App = connect(
 
 // Reducerの戻り値を新しい状態（State）としてStoreで管理する
 const store = createStore(
-  todo,
+  reducers,
   compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
   );
 
